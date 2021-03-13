@@ -1,10 +1,24 @@
+const config = require("./package.json");
+
+const { title, description, author, repository, homepage } = config;
+
+const siteMetadata = {
+  companyName: title,
+  companyUrl: repository.url,
+  authorName: author.name,
+  authorUrl: author.url,
+  siteUrl: homepage,
+  siteDescription: description,
+};
+
 module.exports = {
   // pathPrefix: "/philnugent.github.io",
-  siteMetadata: {
-    title: ` `,
-    description: `Personal sandbox of Phil Nugent`,
-    author: `@philipjnugent`,
-  },
+  // siteMetadata: {
+  //   title: ` `,
+  //   description: `Personal sandbox of Phil Nugent`,
+  //   author: `@philipjnugent`,
+  // },
+  siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -14,6 +28,12 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
