@@ -10,18 +10,15 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1>Phil Nugent</h1>
     <p>Personal sandbox of Phil Nugent</p>
-    {/* <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
+
+    <StaticImage
+      src="../images/motorcycle.jpg"
+      width={600}
       quality={95}
       formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
+      alt=""
       style={{ marginBottom: `1.45rem` }}
-    /> */}
-    {/* <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p> */}
+    />
   </Layout>
 )
 
