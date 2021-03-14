@@ -12,6 +12,7 @@ const Menu = () => (
     <ul style={{ listStyle: `none`, float: `right` }}>
         <ListLink to="/">Home</ListLink>
         <ListLink to="/about/">About</ListLink>
+        <ListLink to="/markdown/">Markdown Posts</ListLink>
         <ListLink to="/posts/">Posts</ListLink>
         <ListLink to="/map/">Map</ListLink>
     </ul>

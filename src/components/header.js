@@ -2,6 +2,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+import { css } from "@emotion/react"
+import { rhythm } from "../utils/typography"
+
 import Menu from "./menu"
 
 const Header = ({ siteTitle }) => (
@@ -21,12 +24,21 @@ const Header = ({ siteTitle }) => (
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+          // style={{
+          //   color: `white`,
+          //   textDecoration: `none`,
+          // }}
         >
-          {siteTitle}
+          <h3
+            css={css`
+              margin-bottom: ${rhythm(2)};
+              display: inline-block;
+              font-style: normal;
+            `}
+          >
+            {siteTitle}
+          </h3>
+   
         </Link>
       </h1>
           <Menu/>

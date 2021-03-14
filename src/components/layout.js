@@ -9,6 +9,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { css } from "@emotion/react"
+import { rhythm } from "../utils/typography"
+
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
@@ -18,7 +21,8 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title,
+          description
         }
       }
     }
@@ -28,14 +32,16 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-        style={{ 
-          margin: `3rem auto`, 
-          maxWidth: 850, 
-          padding: `0 1rem` }}
+        css={css`
+          margin: 0 auto;
+          max-width: 700px;
+          padding: ${rhythm(2)};
+          padding-top: ${rhythm(1.5)};
+        `}
       >
         <main>{children}</main>
       </div>
-      <Footer/>
+      <Footer siteTitle={data.site.siteMetadata?.title || `Title`}/>
     </>
   )
 }
